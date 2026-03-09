@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/auth.service';
 import { TimeService } from '../core/time.service';
+import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-  imports: [CommonModule],
+imports: [CommonModule, AnalogClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css']
 })

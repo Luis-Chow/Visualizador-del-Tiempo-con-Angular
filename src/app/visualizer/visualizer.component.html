@@ -29,9 +29,13 @@
   </div>
 
   <main class="clock-display-area">
-    <div class="placeholder">
-      <h2>Reloj seleccionado: {{ selectedClock }}</h2>
-      <p></p>
+    <div [ngSwitch]="selectedClock" style="width: 100%; display: flex; justify-content: center;">
+      
+      <app-analog-clock *ngSwitchCase="'analogico'"></app-analog-clock>
+
+      <div *ngSwitchCase="'digital'" class="placeholder">Pronto: Reloj Digital...</div>
+      <div *ngSwitchCase="'binario'" class="placeholder">Pronto: Reloj Binario...</div>
+      
     </div>
   </main>
 </div>
