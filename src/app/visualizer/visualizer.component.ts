@@ -4,13 +4,15 @@ import { Router } from '@angular/router';
 import { AuthService } from '../core/auth.service';
 import { TimeService } from '../core/time.service';
 import { AnalogClockComponent } from './analog-clock/analog-clock.component';
+import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent],
   templateUrl: './visualizer.component.html',
-  styleUrls: ['./visualizer.component.css']
+  styleUrls: ['./visualizer.component.css'],
+  
 })
 export class VisualizerComponent {
   authService = inject(AuthService);

@@ -1,0 +1,13 @@
+<div class="digital-container">
+  <div class="time-block">
+    <span class="hours">{{ currentTime | date:'hh' }}</span>
+    <span class="colon">:</span>
+    <span class="minutes">{{ currentTime | date:'mm' }}</span>
+    <span class="colon">:</span>
+    <span class="seconds">{{ currentTime | date:'ss' }}</span>
+    <span class="ampm">{{ currentTime | date:'a' }}</span>
+  </div>
+  <div class="date-block">
+    {{ currentTime | date:'EEEE, d MMMM y' }}
+  </div>
+</div>

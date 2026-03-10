@@ -1,0 +1,53 @@
+.digital-container {
+  background-color: #111;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.time-block {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #0f0;
+  text-shadow: 0 0 15px #0f0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.seconds {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.ampm {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: #888;
+  text-shadow: none;
+}
+
+.colon {
+  animation: blink 1s step-start infinite;
+}
+
+.date-block {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
