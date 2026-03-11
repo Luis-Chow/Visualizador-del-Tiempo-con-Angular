@@ -5,11 +5,12 @@ import { AuthService } from '../core/auth.service';
 import { TimeService } from '../core/time.service';
 import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 import { DigitalClockComponent } from './digital-clock/digital-clock.component';
+import { BinaryClockComponent } from './binary-clock/binary-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent, DigitalClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css'],
   
