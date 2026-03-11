@@ -1,0 +1,33 @@
+<div class="progress-container">
+  
+  <div class="bar-group">
+    <div class="label-row">
+      <span>Horas</span>
+      <span>{{ hours }} / 24</span>
+    </div>
+    <div class="track">
+      <div class="fill hour-fill" [style.width.%]="hPercent"></div>
+    </div>
+  </div>
+
+  <div class="bar-group">
+    <div class="label-row">
+      <span>Minutos</span>
+      <span>{{ minutes }} / 60</span>
+    </div>
+    <div class="track">
+      <div class="fill minute-fill" [style.width.%]="mPercent"></div>
+    </div>
+  </div>
+
+  <div class="bar-group">
+    <div class="label-row">
+      <span>Segundos</span>
+      <span>{{ seconds }} / 60</span>
+    </div>
+    <div class="track">
+      <div class="fill second-fill" [style.width.%]="sPercent"></div>
+    </div>
+  </div>
+
+</div>

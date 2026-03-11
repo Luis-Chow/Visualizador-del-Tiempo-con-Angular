@@ -6,11 +6,12 @@ import { TimeService } from '../core/time.service';
 import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 import { BinaryClockComponent } from './binary-clock/binary-clock.component';
+import { ProgressClockComponent } from './progress-clock/progress-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css'],
   
@@ -23,7 +24,8 @@ export class VisualizerComponent {
   clocks = [
     { id: 'analogico', name: 'Analógico Clásico' },
     { id: 'digital', name: 'Digital Tipográfico' },
-    { id: 'binario', name: 'Reloj Binario' }
+    { id: 'binario', name: 'Reloj Binario' },
+    { id: 'barras', name: 'Barras de Progreso' }
   ];
 
   selectedClock = this.clocks[0].id;
