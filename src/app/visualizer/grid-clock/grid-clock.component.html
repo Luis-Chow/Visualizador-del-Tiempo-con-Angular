@@ -1,0 +1,36 @@
+<div class="grid-container">
+  
+  <div class="grid-section">
+    <h3 class="grid-title">HORAS ({{ currentHour }}/24)</h3>
+    <div class="grid hours-grid">
+      <div 
+        *ngFor="let cell of hoursGrid" 
+        class="cell hour-cell"
+        [class.lit]="cell < currentHour">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-section">
+    <h3 class="grid-title">MINUTOS ({{ currentMinute }}/60)</h3>
+    <div class="grid minutes-grid">
+      <div 
+        *ngFor="let cell of minutesGrid" 
+        class="cell minute-cell"
+        [class.lit]="cell < currentMinute">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-section">
+    <h3 class="grid-title">SEGUNDOS ({{ currentSecond }}/60)</h3>
+    <div class="grid seconds-grid">
+      <div 
+        *ngFor="let cell of secondsGrid" 
+        class="cell second-cell"
+        [class.lit]="cell < currentSecond">
+      </div>
+    </div>
+  </div>
+
+</div>

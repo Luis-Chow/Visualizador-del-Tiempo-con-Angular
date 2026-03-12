@@ -8,11 +8,12 @@ import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 import { BinaryClockComponent } from './binary-clock/binary-clock.component';
 import { ProgressClockComponent } from './progress-clock/progress-clock.component';
 import { HexClockComponent } from './hex-clock/hex-clock.component';
+import { GridClockComponent } from './grid-clock/grid-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css'],
   
@@ -27,7 +28,8 @@ export class VisualizerComponent {
     { id: 'digital', name: 'Digital Tipográfico' },
     { id: 'binario', name: 'Reloj Binario' },
     { id: 'barras', name: 'Barras de Progreso' },
-    { id: 'hexadecimal', name: 'Reloj Color Hexadecimal' }
+    { id: 'hexadecimal', name: 'Reloj Color Hexadecimal' },
+    { id: 'cuadricula', name: 'Matriz de Cuadrículas' }
   ];
 
   selectedClock = this.clocks[0].id;
