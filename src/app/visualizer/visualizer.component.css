@@ -3,12 +3,13 @@
   margin: 0 auto;
   padding: 20px;
   font-family: sans-serif;
+  color: #ffffff;
 }
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #333;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -19,25 +20,36 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
 }
 .controls {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: #f9f9f9;
+  background: #1e1e1e; 
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 30px;
+  border: 1px solid #00e5ff;
 }
 .control-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+}
+
+select {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #00e5ff;
+  font-size: 1rem;
 }
 .time-preview {
   font-family: monospace;
   font-size: 1.5em;
-  color: #333;
+  color: #00e5ff;
   text-align: right;
   margin-top: 5px;
   font-weight: bold;
@@ -47,10 +59,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #222;
-  color: white;
+  background: #000000;
+  color: 00e5ff;
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8);
 }
 .placeholder {
   text-align: center;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  margin: 10px 0;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #00e5ff;
+  cursor: pointer;
+  margin-top: -6px;
+  box-shadow: 0 0 10px #00e5ff;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #00e5ff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px #00e5ff;
 }
