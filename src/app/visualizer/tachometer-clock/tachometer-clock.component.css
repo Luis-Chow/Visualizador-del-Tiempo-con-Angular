@@ -1,0 +1,87 @@
+.tacho-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: inset 0 0 20px #000000, 0 10px 30px rgba(0,0,0,0.8);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.dial-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.label {
+  color: #888;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.gauge {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #0d0d0d;
+  border: 4px solid #333;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hour-gauge { border-color: #ff3366; }
+.minute-gauge { border-color: #00e5ff; }
+.second-gauge { border-color: #ffcc00; }
+
+.marks {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px dashed #444;
+  position: absolute;
+}
+
+.needle {
+  position: absolute;
+  width: 4px;
+  height: 70px;
+  background-color: #ff3333;
+  bottom: 50%;
+  transform-origin: bottom center;
+  border-radius: 4px 4px 0 0;
+  transition: transform 0.2s cubic-bezier(0.4, 2.5, 0.3, 1);
+  box-shadow: 0 0 5px #ff3333;
+}
+
+.center-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #222;
+  border: 3px solid #666;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.value {
+  margin-top: 15px;
+  font-size: 2rem;
+  color: #fff;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.max {
+  font-size: 1rem;
+  color: #555;
+}

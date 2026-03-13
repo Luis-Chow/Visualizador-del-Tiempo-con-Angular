@@ -1,0 +1,32 @@
+<div class="tacho-container">
+  
+  <div class="dial-wrapper">
+    <div class="label">km/h (HORAS)</div>
+    <div class="gauge hour-gauge">
+      <div class="needle" [style.transform]="'rotate(' + hDeg + 'deg)'"></div>
+      <div class="center-dot"></div>
+      <div class="marks"></div> </div>
+    <div class="value">{{ hNum }} <span class="max">/ 24</span></div>
+  </div>
+
+  <div class="dial-wrapper">
+    <div class="label">RPM (MINUTOS)</div>
+    <div class="gauge minute-gauge">
+      <div class="needle" [style.transform]="'rotate(' + mDeg + 'deg)'"></div>
+      <div class="center-dot"></div>
+      <div class="marks"></div>
+    </div>
+    <div class="value">{{ mNum }} <span class="max">/ 60</span></div>
+  </div>
+
+  <div class="dial-wrapper">
+    <div class="label">TURBO (SEGUNDOS)</div>
+    <div class="gauge second-gauge">
+      <div class="needle" [style.transform]="'rotate(' + sDeg + 'deg)'"></div>
+      <div class="center-dot"></div>
+      <div class="marks"></div>
+    </div>
+    <div class="value">{{ sNum }} <span class="max">/ 60</span></div>
+  </div>
+
+</div>
