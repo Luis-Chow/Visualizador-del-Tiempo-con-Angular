@@ -1,0 +1,25 @@
+<div class="ring-container">
+  
+  <svg class="ring-svg" width="300" height="300" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="80" class="track"></circle>
+    <circle cx="100" cy="100" r="60" class="track"></circle>
+    <circle cx="100" cy="100" r="40" class="track"></circle>
+
+    <circle cx="100" cy="100" r="80" class="ring ring-hour" 
+            [style.strokeDasharray]="cHour" 
+            [style.strokeDashoffset]="hOffset"></circle>
+            
+    <circle cx="100" cy="100" r="60" class="ring ring-minute" 
+            [style.strokeDasharray]="cMinute" 
+            [style.strokeDashoffset]="mOffset"></circle>
+            
+    <circle cx="100" cy="100" r="40" class="ring ring-second" 
+            [style.strokeDasharray]="cSecond" 
+            [style.strokeDashoffset]="sOffset"></circle>
+  </svg>
+
+  <div class="time-display">
+    {{ timeString }}
+  </div>
+
+</div>

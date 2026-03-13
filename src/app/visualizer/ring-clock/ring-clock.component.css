@@ -1,0 +1,60 @@
+.ring-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  width: 320px;
+  height: 320px;
+  position: relative;
+}
+
+.ring-svg {
+  transform: rotate(-90deg); 
+}
+
+circle {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: #2a2a2a;
+}
+
+.ring {
+  transition: stroke-dashoffset 0.5s ease-out;
+}
+
+.ring-hour {
+  stroke: #ff0055;
+  filter: drop-shadow(0 0 4px rgba(255, 0, 85, 0.6));
+}
+
+.ring-minute {
+  stroke: #00ffaa;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 170, 0.6));
+}
+
+.ring-second {
+  stroke: #00bfff;
+  filter: drop-shadow(0 0 4px rgba(0, 191, 255, 0.6));
+}
+
+.time-display {
+  position: absolute;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
