@@ -1,0 +1,64 @@
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  margin: 0 auto;
+  
+  min-width: 550px;
+  
+  min-height: 400px;
+  
+  overflow: hidden; 
+}
+
+.sentence-block {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  
+  text-align: center;
+  
+  width: 100%; 
+}
+
+.line {
+  display: block;
+  width: 100%;
+}
+
+.dim {
+  color: #555555;
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.highlight {
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.hour {
+  color: #ffcc00;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+.minute {
+  color: #ffffff;
+}
+
+.second {
+  color: #ff3366;
+  font-style: italic;
+}

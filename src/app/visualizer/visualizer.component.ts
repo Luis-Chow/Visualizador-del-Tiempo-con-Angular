@@ -10,11 +10,12 @@ import { ProgressClockComponent } from './progress-clock/progress-clock.componen
 import { HexClockComponent } from './hex-clock/hex-clock.component';
 import { GridClockComponent } from './grid-clock/grid-clock.component';
 import { RingClockComponent } from './ring-clock/ring-clock.component';
+import { WordClockComponent } from './word-clock/word-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent, RingClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent, RingClockComponent, WordClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css'],
   
@@ -31,7 +32,8 @@ export class VisualizerComponent {
     { id: 'barras', name: 'Barras de Progreso' },
     { id: 'hexadecimal', name: 'Reloj Color Hexadecimal' },
     { id: 'cuadricula', name: 'Matriz de Cuadrículas' },
-    { id: 'anillos', name: 'Anillos Concéntricos' }
+    { id: 'anillos', name: 'Anillos Concéntricos' },
+    { id: 'palabras', name: 'Reloj de Palabras' }
   ];
 
   selectedClock = this.clocks[0].id;
