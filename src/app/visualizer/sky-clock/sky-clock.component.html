@@ -1,0 +1,25 @@
+<div class="sky-window" [ngClass]="isDaytime ? 'day-sky' : 'night-sky'">
+  
+  <div class="track hour-track">
+    <span class="track-label">HORAS</span>
+    <div class="entity" [style.left.%]="hourPos">
+      {{ isDaytime ? '☀️' : '🌙' }}
+    </div>
+  </div>
+
+  <div class="track minute-track">
+    <span class="track-label">MINUTOS</span>
+    <div class="entity cloud" [style.left.%]="minutePos">☁️</div>
+  </div>
+
+  <div class="track second-track">
+    <span class="track-label">SEGUNDOS</span>
+    <div class="entity rocket" [style.left.%]="secondPos">🚀</div>
+  </div>
+
+  <div class="ground">
+    <span>Tiempo:</span>
+    <strong>{{ exactTime }}</strong>
+  </div>
+
+</div>

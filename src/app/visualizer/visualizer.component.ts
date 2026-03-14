@@ -12,11 +12,12 @@ import { GridClockComponent } from './grid-clock/grid-clock.component';
 import { RingClockComponent } from './ring-clock/ring-clock.component';
 import { WordClockComponent } from './word-clock/word-clock.component';
 import { TachometerClockComponent } from './tachometer-clock/tachometer-clock.component';
+import { SkyClockComponent } from './sky-clock/sky-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent, RingClockComponent, WordClockComponent, TachometerClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent, RingClockComponent, WordClockComponent, TachometerClockComponent, SkyClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css'],
   
@@ -35,7 +36,8 @@ export class VisualizerComponent {
     { id: 'cuadricula', name: 'Matriz de Cuadrículas' },
     { id: 'anillos', name: 'Anillos Concéntricos' },
     { id: 'palabras', name: 'Reloj de Palabras' },
-    { id: 'tacometro', name: 'Tablero de Tacómetros' }
+    { id: 'tacometro', name: 'Tablero de Tacómetros' },
+    { id: 'Dia/Noche', name: 'Dia / Noche' }
   ];
 
   selectedClock = this.clocks[0].id;
