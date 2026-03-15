@@ -13,11 +13,12 @@ import { RingClockComponent } from './ring-clock/ring-clock.component';
 import { WordClockComponent } from './word-clock/word-clock.component';
 import { TachometerClockComponent } from './tachometer-clock/tachometer-clock.component';
 import { SkyClockComponent } from './sky-clock/sky-clock.component';
+import { TerminalClockComponent } from './terminal-clock/terminal-clock.component';
 
 @Component({
   selector: 'app-visualizer',
   standalone: true,
-imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent, RingClockComponent, WordClockComponent, TachometerClockComponent, SkyClockComponent],
+imports: [CommonModule, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, ProgressClockComponent, HexClockComponent, GridClockComponent, RingClockComponent, WordClockComponent, TachometerClockComponent, SkyClockComponent, TerminalClockComponent],
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css'],
   
@@ -37,7 +38,8 @@ export class VisualizerComponent {
     { id: 'anillos', name: 'Anillos Concéntricos' },
     { id: 'palabras', name: 'Reloj de Palabras' },
     { id: 'tacometro', name: 'Tablero de Tacómetros' },
-    { id: 'Dia/Noche', name: 'Dia / Noche' }
+    { id: 'Dia/Noche', name: 'Dia / Noche' },
+    { id: 'terminal', name: 'Terminal de Comandos (CLI)' }
   ];
 
   selectedClock = this.clocks[0].id;

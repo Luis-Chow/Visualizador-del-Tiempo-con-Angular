@@ -1,0 +1,38 @@
+<div class="terminal-window">
+  
+  <div class="terminal-header">
+    <div class="buttons">
+      <span class="btn close"></span>
+      <span class="btn minimize"></span>
+      <span class="btn maximize"></span>
+    </div>
+    <div class="title">admin@servidor-tiempo : ~</div>
+  </div>
+
+  <div class="terminal-body">
+    <div class="command-line">
+      <span class="prompt">admin@servidor-tiempo:~$</span> date --iso-8601=seconds
+    </div>
+    <div class="output">
+      {{ currentTime | date:'yyyy-MM-ddTHH:mm:ssZZZZZ' }}
+    </div>
+
+    <br>
+
+    <div class="command-line">
+      <span class="prompt">admin@servidor-tiempo:~$</span> cat /proc/driver/rtc | grep time
+    </div>
+    <div class="output">
+      rtc_time : {{ currentTime | date:'HH:mm:ss' }}
+      <br>
+      unix_epoch : {{ unixTime }}
+    </div>
+
+    <br>
+
+    <div class="command-line">
+      <span class="prompt">admin@servidor-tiempo:~$</span> <span class="cursor">_</span>
+    </div>
+  </div>
+
+</div>
