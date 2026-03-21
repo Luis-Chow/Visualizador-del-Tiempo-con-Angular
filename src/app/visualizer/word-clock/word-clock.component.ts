@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { TimeService } from '../../core/time.service';
 
+// Componente que traduce el tiempo numerico a una frase legible en español
 @Component({
   selector: 'app-word-clock',
   standalone: true,
@@ -14,12 +15,14 @@ export class WordClockComponent implements OnInit, OnDestroy {
   timeService = inject(TimeService);
   private timeSub?: Subscription;
 
-  prefix = '';
-  hourText = '';
-  minuteText = '';
-  secondText = '';
+  // Variables para formar la oracion
+  prefix = '';      // "Es la" o "Son las"
+  hourText = '';    // "una", "dos", etc.
+  minuteText = '';  // "diez", "veinticinco", etc.
+  secondText = '';  // "cero", "uno", etc.
 
   ngOnInit() {
+    // Se suscribe al flujo de tiempo para actualizar las palabras cada segundo
     this.timeSub = this.timeService.time$.subscribe(time => {
       this.updateWords(time);
     });
@@ -29,25 +32,33 @@ export class WordClockComponent implements OnInit, OnDestroy {
     if (this.timeSub) this.timeSub.unsubscribe();
   }
 
+  // Logica para decidir el genero y numero de la frase
   private updateWords(time: Date) {
     let h = time.getHours();
     const m = time.getMinutes();
     const s = time.getSeconds();
 
+    // Formato de 12 horas para lenguaje natural
     h = h % 12;
     if (h === 0) h = 12;
 
+    // Ajuste de gramatica segun la hora
     this.prefix = h === 1 ? 'Es la' : 'Son las';
-    
     this.hourText = h === 1 ? 'una' : this.numberToWords(h);
+    
     this.minuteText = this.numberToWords(m);
     this.secondText = this.numberToWords(s);
   }
 
+  /**
+   * @method numberToWords
+   * @description Algoritmo para convertir numeros (0-59) a texto en español.
+   * Maneja excepciones como numeros del 11 al 19 y la familia de los veintes.
+   */
   private numberToWords(num: number): string {
     if (num === 0) return 'cero';
     
-    const units = ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete', 'dieciocho', 'diecinueve'];
+    const units = ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciseis', 'diecisiete', 'dieciocho', 'diecinueve'];
     const tens = ['', '', 'veinte', 'treinta', 'cuarenta', 'cincuenta'];
 
     if (num < 20) return units[num];

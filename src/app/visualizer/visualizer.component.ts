@@ -15,6 +15,9 @@ import { TachometerClockComponent } from './tachometer-clock/tachometer-clock.co
 import { SkyClockComponent } from './sky-clock/sky-clock.component';
 import { TerminalClockComponent } from './terminal-clock/terminal-clock.component';
 
+
+// Componente principal del visualizador
+// Se encarga de la navegacion entre relojes y la gestion del tiempo
 @Component({
   selector: 'app-visualizer',
   standalone: true,
@@ -28,6 +31,7 @@ export class VisualizerComponent {
   public timeService = inject(TimeService);
   router = inject(Router);
 
+  // Catalogo de relojes disponibles para el dropdown
   clocks = [
     { id: 'analogico', name: 'Analógico Clásico' },
     { id: 'digital', name: 'Digital Tipográfico' },
@@ -42,18 +46,22 @@ export class VisualizerComponent {
     { id: 'terminal', name: 'Terminal de Comandos (CLI)' }
   ];
 
+  // Estado que controla cual reloj se renderiza (por defecto el primero)
   selectedClock = this.clocks[0].id;
 
+  // Cambia el id del reloj seleccionado segun el dropdown
   onClockChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     this.selectedClock = target.value;
   }
 
+  // Notifica al servicio de tiempo cuando el slider se mueve
   onSliderChange(event: Event) {
     const target = event.target as HTMLInputElement;
     this.timeService.setOffsetMinutes(Number(target.value));
   }
 
+  // Borra sesion y redirige a la pantalla de entrada
   logout() {
     this.authService.logout();
     this.router.navigate(['/auth']);

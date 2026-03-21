@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { TimeService } from '../../core/time.service';
 
+// Componente que visualiza el tiempo como barras de carga horizontales
 @Component({
   selector: 'app-progress-clock',
   standalone: true,
@@ -14,17 +15,18 @@ export class ProgressClockComponent implements OnInit, OnDestroy {
   timeService = inject(TimeService);
   private timeSub?: Subscription;
 
-  // Variables para guardar el número exacto
+  // Variables para mostrar el numero exacto en las etiquetas
   hours = 0;
   minutes = 0;
   seconds = 0;
 
-  // Variables para guardar el porcentaje de llenado (0 a 100)
+  // Variables para el ancho de las barras (0 a 100)
   hPercent = 0;
   mPercent = 0;
   sPercent = 0;
 
   ngOnInit() {
+    // Suscripcion al flujo de tiempo para recalcular el progreso cada segundo
     this.timeSub = this.timeService.time$.subscribe(time => {
       this.updateProgress(time);
     });
@@ -34,12 +36,13 @@ export class ProgressClockComponent implements OnInit, OnDestroy {
     if (this.timeSub) this.timeSub.unsubscribe();
   }
 
+  // Realiza el calculo matematico de los porcentajes
   private updateProgress(time: Date) {
     this.hours = time.getHours();
     this.minutes = time.getMinutes();
     this.seconds = time.getSeconds();
 
-    // Calculamos los porcentajes (Horas sobre 24, Minutos y Segundos sobre 60)
+    // Regla de tres: (valor actual / valor maximo) * 100
     this.hPercent = (this.hours / 24) * 100;
     this.mPercent = (this.minutes / 60) * 100;
     this.sPercent = (this.seconds / 60) * 100;
