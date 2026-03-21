@@ -5,6 +5,6 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet], // Importa el modulo de rutas
-  template: `<router-outlet></router-outlet>` // Aqui es donde Angular inyecta las vistas
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {}
